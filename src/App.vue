@@ -25,7 +25,13 @@ const addTodo = () => {
     done: false,
     createdAt: new Date().getTime(),
   });
+  input_content.value = ''
+  input_category.value = null
 };
+
+const removeTodo = todo =>{
+  todos.value = todos.value.filter(t => t !== todo)
+}
 
 watch(
   todos,
@@ -99,7 +105,7 @@ onMounted(() => {
           </div>
 
           <div class="ations"></div>
-          <button class="delete" @click="removeTodo">Delete</button>
+          <button class="delete" @click="removeTodo(todo)">Delete</button>
         </div>
       </div>
     </section>
