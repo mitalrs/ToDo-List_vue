@@ -104,10 +104,15 @@ onMounted(() => {
             <input type="text" v-model="todo.content" />
           </div>
 
-          <div class="ations"></div>
-          <button class="delete" @click="removeTodo(todo)">Delete</button>
+          <div class="actions">
+            <button class="delete" @click="removeTodo(todo)">Delete</button>
+          </div>
+          
         </div>
       </div>
     </section>
   </main>
 </template>
+
+
+
