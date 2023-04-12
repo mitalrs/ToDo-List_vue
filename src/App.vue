@@ -59,13 +59,20 @@ onMounted(() => {
       </h2>
     </section>
 
+    <div class="section-parent">
+
+      <aside class="saved-lists">
+        <h3>Saved Todo Lists</h3>
+      </aside>
+
+      <div class=".main-app">
     <section class="create-todo">
       <h3>CREATE A TODO</h3>
       <form @submit.prevent="addTodo">
         <h4>what's on your todo list?</h4>
         <input
           type="text"
-          placeholder="e.g. make a video"
+          placeholder="e.g. Video Editing"
           v-model="input_content"
         />
 
@@ -111,6 +118,8 @@ onMounted(() => {
         </div>
       </div>
     </section>
+  </div>
+  </div>
   </main>
 </template>
 
