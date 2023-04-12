@@ -7,6 +7,14 @@ const name = ref("");
 const input_content = ref("");
 const input_category = ref(null);
 
+const time = new Date()
+let current = time.getHours() + ":"  
+                + time.getMinutes() + ":" 
+                + time.getSeconds();
+let date = (time.getMonth()+1)+ "/" + time.getDate()+ "/"   
+                + time.getFullYear();
+
+
 const todos_asc = computed(() =>
   todos.value.sort((a, b) => {
     return b.createdAt - a.createdAt;
@@ -76,18 +84,18 @@ onMounted(() => {
           v-model="input_content"
         />
 
-        <h4>pick a category</h4>
+        <h4>Date and Time</h4>
         <div class="options">
           <label>
-            <input type="redio" name="category" v-model="input_category" />
-            <span class="bubble business"></span>
-            <div>Business</div>
+            <span>{{ date }}</span>
+            <span class="business"></span>
+            <div>Date</div>
           </label>
 
           <label>
-            <input type="redio" name="category" v-model="input_category" />
-            <span class="bubble personal"></span>
-            <div>personal</div>
+           <span>{{ current }}</span>
+            <span class="personal"></span>
+            <div>Time</div>
           </label>
         </div>
 
